@@ -13,15 +13,16 @@ jobs:
         with:
           toolchain: stable
           target: wasm32-unknown-unknown
-
       - uses: jetli/trunk-action@v0.1.0
       - uses: jetli/wasm-bindgen-action@v0.1.0
-
-      - uses: actions/checkout@v2
-
-      - run: trunk build --release
-
-      - uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Generate Stylesheet
+        run: npm i && npm run tailwind-build
+      - name: Build
+        run: trunk build --release
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/master'
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
