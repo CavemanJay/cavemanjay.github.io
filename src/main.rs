@@ -1,9 +1,9 @@
 #![warn(clippy::pedantic, clippy::nursery)]
 mod components;
 
-use components::*;
-use gloo_console::log;
-use wasm_bindgen::JsValue;
+use components::{Home, NotFound};
+use std::process::Command;
+use web_sys::HtmlInputElement;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
@@ -28,11 +28,20 @@ fn switch(routes: Route) -> Html {
 
 #[function_component]
 fn App() -> Html {
+    let onchange = move |e: Event| {
+        let input = e.target_dyn_into::<HtmlInputElement>().unwrap();
+        let val = input.value();
+        let x = Command::new(val).spawn().unwrap().wait().unwrap();
+    };
+
     html! {
         <HashRouter>
             <Switch<Route> render={switch} />
             <footer class="flex pb-2">
-                <div class="flex-1 text-left pl-3"></div>
+                <div class="flex-1 text-left pl-3">
+                    <label class="block">{"Potential vulnerability"}</label>
+                    <input {onchange} />
+                </div>
                 <div class="flex-1 text-center">
                     <span>{"Created using: "}</span>
                         <img class="w-8 inline" src="/static/rustacean-flat-gesture.svg" type="image/svg+xml" />
