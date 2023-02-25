@@ -31,6 +31,25 @@ fn App() -> Html {
     html! {
         <HashRouter>
             <Switch<Route> render={switch} />
+            <footer class="flex pb-2">
+                <div class="flex-1 text-left pl-3"></div>
+                <div class="flex-1 text-center">
+                    <span>{"Created using: "}</span>
+                        <img class="w-8 inline" src="/static/rustacean-flat-gesture.svg" type="image/svg+xml" />
+                    <a target="_blank" href="https://www.rust-lang.org/">
+                        {"rust"}
+                    </a>
+                    <span>{" + "}</span>
+                    <a class="underline" target="_blank" href="https://tailwindcss.com/">
+                        {"tailwindcss"}
+                    </a>
+                </div>
+                <div class="flex-1 text-right pr-3">
+                    <a class="underline" target="_blank" href="https://github.com/cavemanjay/cavemanjay.github.io">
+                        {"Source"}
+                    </a>
+                </div>
+            </footer>
         </HashRouter>
     }
 }
