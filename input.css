@@ -1,3 +1,104 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  ul,
+  ol,
+  li {
+    list-style: revert;
+    padding: revert;
+  }
+
+  ::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: start !important;
+  }
+}
+
+html,
+body {
+  background: black;
+}
+html {
+  height: 100%;
+}
+body {
+  color: white;
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  min-height: 100%;
+  overflow-wrap: break-word;
+}
+.post-meta {
+  text-align: right;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 3rem;
+}
+hr {
+  margin: 2rem 0;
+}
+p {
+  margin: 1rem 0;
+}
+li {
+  margin: 0.4rem 0;
+}
+*:target {
+  background: green;
+}
+a:link {
+  color: #87f087;
+}
+a:visited {
+  color: #87f087;
+}
+.w {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+hr {
+  text-align: center;
+  border: 0;
+}
+hr:before {
+  content: "/////";
+}
+hr:after {
+  content: attr(data-content) "/////";
+}
+table {
+  width: 100%;
+}
+table,
+th,
+td {
+  border: thin solid white;
+  border-collapse: collapse;
+  padding: 0.4rem;
+}
+blockquote {
+  font-style: italic;
+  border: thin solid white;
+  padding: 1rem;
+}
+blockquote p {
+  margin: 0;
+}
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}

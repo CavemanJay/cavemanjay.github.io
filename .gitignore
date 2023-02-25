@@ -1,4 +1,5 @@
 /target
 /dist
 /*.log
-style/site.css
+/static/site.css
+node_modules

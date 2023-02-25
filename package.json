@@ -1,0 +1,22 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "tailwind-watch": "tailwindcss -i ./input.css -o ./static/site.css --watch",
+    "tailwind-build": "tailwindcss -i ./input.css -o ./static/site.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CavemanJay/cavemanjay.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CavemanJay/cavemanjay.github.io/issues"
+  },
+  "homepage": "https://github.com/CavemanJay/cavemanjay.github.io#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  }
+}

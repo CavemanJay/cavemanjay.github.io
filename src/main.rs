@@ -1,42 +1,37 @@
 #![warn(clippy::pedantic, clippy::nursery)]
+mod components;
+
+use components::*;
 use gloo_console::log;
 use wasm_bindgen::JsValue;
 use yew::prelude::*;
+use yew_router::prelude::*;
 
-// mod projects;
+#[derive(Clone, Routable, PartialEq, Copy)]
+enum Route {
+    #[at("/")]
+    Home,
+    #[at("/projects")]
+    Projects,
+    #[not_found]
+    #[at("/404")]
+    NotFound,
+}
+
+fn switch(routes: Route) -> Html {
+    match routes {
+        Route::Home => html! {<Home/>},
+        Route::Projects => html! {},
+        Route::NotFound => html! {<NotFound/>},
+    }
+}
 
 #[function_component]
 fn App() -> Html {
-    let counter = use_state(|| 1);
-    let onclick = {
-        let counter = counter.clone();
-        move |_| {
-            // log!("test");
-            let value = *counter * 2;
-            counter.set(value);
-        }
-    };
-
     html! {
-        <div class="w">
-            <header>
-                <h1>{"/optsec"}</h1>
-                <p></p>
-            </header>
-            <ul>
-                <li>
-                    {"# whoami"}
-                </li>
-                <ul>
-                    <li>{"Jay C*****"}</li>
-                    <ul>
-                        <li>{"Software Developer"}</li>
-                    </ul>
-                </ul>
-            </ul>
-            <button class={classes!("border-2", "rounded")} {onclick}>{"test button"}</button>
-            <p>{*counter}</p>
-        </div>
+        <HashRouter>
+            <Switch<Route> render={switch} />
+        </HashRouter>
     }
 }
 
