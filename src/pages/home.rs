@@ -40,13 +40,13 @@ pub fn Home() -> Html {
                         {"projects"}
                         <ul>
                             <li>
-                                {"Esoteric Programming Language Visualizers"}
+                                {"Esoteric Programming Languages"}
                                 <ul>
                                     <li>
-                                        <RouteLink to={Route::Brainfuck} classes="link font-bold">{"BrainF***"}</RouteLink>
+                                        <RouteLink to={Route::Brainfuck} classes="link font-bold">{"BrainF*** Visualizer"}</RouteLink>
                                     </li>
                                     <li>
-                                        <RouteLink to={Route::Jsfuck} classes="link font-bold">{"JSF***"}</RouteLink>
+                                        <RouteLink to={Route::Jsfuck} classes="link font-bold">{"JSF*** Transpiler"}</RouteLink>
                                     </li>
                                 </ul>
                             </li>
