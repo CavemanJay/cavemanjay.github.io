@@ -530,6 +530,18 @@ ul,
   --tw-backdrop-sepia:  ;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.top-\[50\%\] {
+  top: 50%;
+}
+
+.m-0 {
+  margin: 0px;
+}
+
 .mt-8 {
   margin-top: 2rem;
 }
@@ -550,8 +562,25 @@ ul,
   width: 2rem;
 }
 
+.w-\[50\%\] {
+  width: 50%;
+}
+
+.w-full {
+  width: 100%;
+}
+
 .flex-1 {
   flex: 1 1 0%;
+}
+
+.flex-grow-\[2\] {
+  flex-grow: 2;
+}
+
+.translate-y-\[-50\%\] {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .rounded-lg {
@@ -599,6 +628,11 @@ ul,
   font-family: monospace;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-9xl {
   font-size: 8rem;
   line-height: 1;
@@ -622,8 +656,12 @@ ul,
   color: rgb(135 240 135 / var(--tw-text-opacity));
 }
 
-.underline {
-  text-decoration-line: underline;
+.secondary {
+  color: var(--secondary);
+}
+
+:root {
+  --secondary: #87f087;
 }
 
 html,
@@ -673,12 +711,14 @@ li {
   background: green;
 }
 
-a:link {
-  color: #87f087;
+button.link {
+  text-decoration-line: underline;
+  color: var(--secondary);
 }
 
-a:visited {
-  color: #87f087;
+a.link {
+  text-decoration-line: underline;
+  color: var(--secondary);
 }
 
 .w {
@@ -738,11 +778,21 @@ footer {
 
 a[target="_blank"] {
   text-decoration-line: underline;
+  text-decoration-style: double;
+  text-underline-offset: 4px;
+}
+
+input {
+  color: black;
 }
 
 .hover\:bg-green-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+}
+
+.\[\&\>li\>span\]\:secondary>li>span {
+  color: var(--secondary);
 }
 
 .\[\&\>p\]\:leading-3>p {
