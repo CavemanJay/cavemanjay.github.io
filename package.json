@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "tailwind-watch": "tailwindcss -i ./input.css -o ./static/site.css --watch",
-    "tailwind-build": "tailwindcss -i ./input.css -o ./static/site.css"
+    "tailwind-watch": "tailwindcss -i ./index.css -o ./static/site.css --watch",
+    "tailwind-build": "tailwindcss -i ./index.css -o ./static/site.css"
   },
   "repository": {
     "type": "git",

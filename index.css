@@ -20,6 +20,16 @@
   }
 }
 
+:root {
+  --secondary: #87f087;
+}
+
+@layer utilities {
+  .secondary {
+    @apply text-[var(--secondary)];
+  }
+}
+
 html,
 body {
   background: black;
@@ -58,11 +68,11 @@ li {
 *:target {
   background: green;
 }
-a:link {
-  color: #87f087;
+button.link {
+  @apply secondary underline;
 }
-a:visited {
-  color: #87f087;
+a.link {
+  @apply secondary underline;
 }
 .w {
   max-width: 640px;
@@ -112,5 +122,9 @@ footer {
 }
 
 a[target="_blank"] {
-  @apply underline;
+  @apply underline decoration-double underline-offset-4;
+}
+
+input {
+  color: black;
 }
