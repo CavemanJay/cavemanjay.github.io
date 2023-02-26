@@ -4,12 +4,15 @@ use web_sys::{window, HtmlInputElement};
 use yew::prelude::*;
 use yew_router::{HashRouter, Switch};
 
-use crate::{Route, switch};
+use crate::{switch, Route};
 
 #[function_component]
 pub fn App() -> Html {
-    let window = window().expect_throw("Huh?");
-    window.document().unwrap().set_title("/optsec - dev");
+    #[cfg(debug_assertions)]
+    {
+        let window = window().expect_throw("Huh?");
+        window.document().unwrap().set_title("/optsec - dev");
+    }
     let onchange = move |e: Event| {
         let input = e.target_dyn_into::<HtmlInputElement>().unwrap();
         let val = input.value();
