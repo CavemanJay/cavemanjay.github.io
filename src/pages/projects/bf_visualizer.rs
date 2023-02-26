@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-#[derive(PartialEq, Properties)]
+#[derive(PartialEq, Eq, Properties)]
 pub struct BfVisualizerProps {}
 
 #[function_component]

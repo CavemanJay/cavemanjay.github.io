@@ -1,15 +1,15 @@
 use jsfuckrs;
 use wasm_bindgen::JsCast;
-use web_sys::{window, Document, EventTarget, HtmlInputElement, HtmlTextAreaElement, Node};
+use web_sys::{EventTarget, HtmlInputElement};
 use yew::prelude::*;
 
-#[derive(PartialEq, Properties)]
+#[derive(PartialEq, Eq, Properties)]
 pub struct JsfVisualizerProps {}
 
 // TODO: Give ability for user to both console.log and alert output
 
 #[function_component]
-pub fn JsfVisualizer(props: &JsfVisualizerProps) -> Html {
+pub fn JsfVisualizer(_props: &JsfVisualizerProps) -> Html {
     let js_state = use_state(|| AttrValue::from("alert(1)"));
     let output_value = use_state(String::new);
 

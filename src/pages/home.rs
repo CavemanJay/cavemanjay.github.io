@@ -5,7 +5,7 @@ use crate::{Route, RouteLink};
 
 #[function_component]
 pub fn Home() -> Html {
-    let navigator = use_navigator().unwrap();
+    let _navigator = use_navigator().unwrap();
     // let bf_navigate = move |_| navigator.push(&Route::Brainfuck);
     // let jsf_navigate = move |_| navigator.push(&Route::JsFuck);
     html! {
