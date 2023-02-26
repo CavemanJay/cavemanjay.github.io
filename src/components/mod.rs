@@ -1,9 +1,3 @@
-macro_rules! declare {
-    ($mod:ident,$component:ident) => {
-        mod $mod;
-        pub use $mod::$component;
-    };
-}
+use crate::declare;
 
-declare!(home, Home);
-declare!(not_found, NotFound);
+declare!(app, App);
