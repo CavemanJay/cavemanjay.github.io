@@ -1,6 +1,5 @@
 procs:
   trunk: "trunk serve -i node_modules"
-  bacon clippy: "bacon -j clippy"
-  bacon tests: "bacon -j test"
-  # tailwind: "npx tailwindcss -i ./input.css -o ./style/site.css --watch"
+  # bacon clippy: "bacon -j clippy"
+  # bacon tests: "bacon -j test"
   tailwind: "pnpm run tailwind-watch"
