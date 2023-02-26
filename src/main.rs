@@ -32,9 +32,12 @@ enum Route {
 }
 
 fn switch(routes: Route) -> Html {
+    // let x = LinearEngine::run(">++++++++[-<+++++++++>]<.>>+>-[+]++>++>+++[>[->+++<<+++>]<<]>-----.>->+++..+++.>-.<<+[>[+>+]>>]<--------------.>>.+++.------.--------.>+.>+.").unwrap();
     match routes {
         Route::Home => html! {<Home/>},
-        Route::Brainfuck | Route::Jsfuck | Route::Projects => html! {<UnderConstruction/>},
+        // Route::Brainfuck => html! {<BfVisualizer/>},
+        Route::Jsfuck => html! {<JsfVisualizer/>},
+        Route::Projects | Route::Brainfuck => html! {<UnderConstruction/>},
         Route::NotFound => html! {<NotFound/>},
     }
 }
