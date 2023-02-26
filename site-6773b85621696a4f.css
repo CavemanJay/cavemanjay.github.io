@@ -546,6 +546,15 @@ ul,
   margin: 2.5rem;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -566,8 +575,8 @@ ul,
   display: flex;
 }
 
-.max-h-80 {
-  max-height: 20rem;
+.h-80 {
+  height: 20rem;
 }
 
 .w-8 {
@@ -625,6 +634,10 @@ ul,
 
 .border {
   border-width: 1px;
+}
+
+.border-\[var\(--secondary\)\] {
+  border-color: var(--secondary);
 }
 
 .border-green-500 {
