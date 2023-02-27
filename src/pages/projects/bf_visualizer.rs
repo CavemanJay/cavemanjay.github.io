@@ -1,38 +1,43 @@
-use yew::prelude::*;
+use leptos::*;
+use leptos_router::*;
 
-#[derive(PartialEq, Eq, Properties)]
-pub struct BfVisualizerProps {}
-
-#[function_component]
-pub fn BfVisualizer(props: &BfVisualizerProps) -> Html {
-    let BfVisualizerProps {} = props;
+#[component]
+pub fn BfVisualizer(cx: Scope) -> impl IntoView {
     let tape = (1..10).collect::<Vec<_>>();
 
-    html! {
+    view! {
+        cx,
         <div>
-            <Tape {tape}/>
+            // <Tape tape/>
             <hr/>
         </div>
     }
 }
 
-#[derive(PartialEq, Properties)]
-struct TapeProps {
-    tape: Vec<u8>,
-}
+// #[derive(PartialEq)]
+// struct TapeProps {
+//     tape: Vec<u8>,
+// }
 
-#[function_component]
-fn Tape(props: &TapeProps) -> Html {
-    let list = props.tape.iter().enumerate().map(|(i, val)| {
-        html! {
-            <li key={i}>{val}</li>
-        }
-    });
-    html! {
-        <div class="overflow-x-auto whitespace-nowrap p-5">
-            <ul class="p-0 -pl-2 mt-3 list-none [&>li]:inline [&>li]:border [&>li]:p-2">
-                {list.collect::<Html>()}
-            </ul>
-        </div>
+// #[function_component]
+// fn Tape(props: &TapeProps) -> Html {
+#[component]
+pub fn Tape(cx: Scope) -> impl IntoView {
+    // let list = props.tape.iter().enumerate().map(|(i, val)| {
+    //     html! {
+    //         <li key={i}>{val}</li>
+    //     }
+    // });
+    // html! {
+    //     <div class="overflow-x-auto whitespace-nowrap p-5">
+    //         <ul class="p-0 -pl-2 mt-3 list-none [&>li]:inline [&>li]:border [&>li]:p-2">
+    //             {list.collect::<Html>()}
+    //         </ul>
+    //     </div>
+    // }
+    view! {
+        cx,
+        <>
+        </>
     }
 }

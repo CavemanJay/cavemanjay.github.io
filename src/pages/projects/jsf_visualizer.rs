@@ -1,56 +1,53 @@
 use jsfuckrs;
-use wasm_bindgen::JsCast;
-use web_sys::{EventTarget, HtmlInputElement};
-use yew::prelude::*;
+use leptos::*;
 
-#[derive(PartialEq, Eq, Properties)]
-pub struct JsfVisualizerProps {}
+#[component]
+pub fn JsfVisualizer(cx: Scope) -> impl IntoView {
+    let (src, set_src) = create_signal(cx, String::from("alert(1)"));
+    let (compiled, set_compiled) = create_signal(cx, String::new());
+    // let js_state = use_state(|| AttrValue::from("alert(1)"));
+    // let output_value = use_state(String::new);
 
-// TODO: Give ability for user to both console.log and alert output
-
-#[function_component]
-pub fn JsfVisualizer(_props: &JsfVisualizerProps) -> Html {
-    let js_state = use_state(|| AttrValue::from("alert(1)"));
-    let output_value = use_state(String::new);
-
-    let execute = {
-        let output_value = output_value.clone();
-        Callback::from(move |_| {
-            let y = js_sys::eval(&output_value).unwrap();
-            gloo_console::log!(y);
-        })
+    let compile = move |_| {
+        let src = src();
+        if src.trim() == "" {
+            return;
+        }
+        let result = jsfuckrs::lbp::compile(src);
+        set_compiled.set(result);
     };
-    let compile = {
-        let src = js_state.clone();
-        let output = output_value.clone();
-        Callback::from(move |_| {
-            if src.trim() == "" {
-                return;
-            }
-
-            let compiled = jsfuckrs::lbp::compile(&*src);
-            output.set(compiled);
-        })
-    };
-    let onchange = {
-        let js_state = js_state.clone();
-        Callback::from(move |e: Event| {
-            let target: EventTarget = e
-                .target()
-                .expect("Event should have a target when dispatched");
-            js_state.set(target.unchecked_into::<HtmlInputElement>().value().into());
-        })
+    let execute = move |_| {
+        let y = js_sys::eval(&compiled()).unwrap();
+        log::info!("{:?}", y);
     };
 
-    html! {
+    view! {
+        cx,
         <div>
-            <input class="m-10 [writing-mode:horizontal-tb]" {onchange} value={js_state.as_str().to_string()} />
-            <button class="border rounded p-2" onclick={compile}>{"Compile"}</button>
+            <input
+                class="m-10 [writing-mode:horizontal-tb]"
+                value=src
+                on:change = move |ev| {
+                    let val = event_target_value(&ev);
+                    set_src.update(|v|*v = val);
+                }
+            />
+            <button
+                class="border rounded p-2"
+                on:click=compile
+            >
+                {"Compile"}
+            </button>
             <hr/>
             <div class="max-w-lg h-80 overflow-auto border border-[var(--secondary)] rounded m-2">
-                <code>{&*output_value}</code>
+                <code>{compiled}</code>
             </div>
-            <button class="border mx-2 rounded p-2 border-[var(--secondary)]" onclick={execute}>{"Run This"}</button>
+            <button
+                class="border mx-2 rounded p-2 border-[var(--secondary)]"
+                on:click=execute
+            >
+                {"Run This"}
+            </button>
         </div>
     }
 }

@@ -1,52 +1,51 @@
-use yew::prelude::*;
-use yew_router::prelude::*;
+use crate::Page;
+use leptos::*;
+use leptos_router::*;
 
-use crate::{Route, RouteLink};
-
-#[function_component]
-pub fn Home() -> Html {
-    let _navigator = use_navigator().unwrap();
-    // let bf_navigate = move |_| navigator.push(&Route::Brainfuck);
-    // let jsf_navigate = move |_| navigator.push(&Route::JsFuck);
-    html! {
+#[component]
+pub fn Home(cx: Scope) -> impl IntoView {
+    // let _navigator = use_navigator().unwrap();
+    view! { cx,
         <>
             <div class="w">
                 <header>
-                    <h1 class="text-[2em] font-[monospace] font-bold">{"/optsec"}</h1>
+                    <h1 class="text-[2em] font-[monospace] font-bold">"/optsec"</h1>
                     <p></p>
                 </header>
                 <ul>
                     <li>
-                        {"# whoami"}
+                        "# whoami"
                     </li>
                     <ul>
-                        <li>{"Jay C*****"}</li>
+                        <li>"Jay C*****"</li>
                         <ul>
-                            <li>{"Software Developer / Casual Hacker"}</li>
+                            <li>"Software Developer / Casual Hacker"</li>
                         </ul>
                     </ul>
                     <li>
-                        {"languages"}
-                        <ol class="[&>li>span]:secondary">
-                            <li><span>{"Rust"}</span></li>
-                            <li><span>{"Python"}</span></li>
-                            <li><span>{"C#"}</span></li>
-                            <li><span>{"Go"}</span></li>
-                            <li><span>{"F#"}</span></li>
-                            <li><span>{"Haskell"}</span></li>
-                        </ol>
+                        <A class="link" href="/about">"about me"</A>
                     </li>
                     <li>
-                        {"projects"}
+                        "projects"
                         <ul>
                             <li>
-                                {"Esoteric Programming Languages"}
+                                "Esoteric Programming Languages"
                                 <ul>
                                     <li>
-                                        <RouteLink to={Route::Brainfuck} classes="link font-bold">{"BrainF*** Visualizer"}</RouteLink>
+                                        // <A href="/projects/esolangs/brainf***" class="link font-bold">{"BrainF*** Visualizer"}</A>
+                                        <A href=Page::BrainF___.path() class="link font-bold">"BrainF*** Visualizer"</A>
                                     </li>
                                     <li>
-                                        <RouteLink to={Route::Jsfuck} classes="link font-bold">{"JSF*** Transpiler"}</RouteLink>
+                                        // <A href="/projects/esolangs/jsf***" class="link font-bold">{"JSF*** Transpiler"}</A>
+                                        <A href=Page::JSF___.path() class="link font-bold">"JSF*** Transpiler"</A>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                "Misc"
+                                <ul>
+                                    <li>
+                                        <A href=Page::TrueJson.path() class="link font-bold">"Json to TrueJson Converter"</A>
                                     </li>
                                 </ul>
                             </li>

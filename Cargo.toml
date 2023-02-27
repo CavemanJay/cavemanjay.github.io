@@ -6,10 +6,13 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-gloo-console = "0.2.3"
-wasm-bindgen = "0.2.84"
-web-sys = "0.3.61"
-yew = { version = "0.20.0", features = ["csr"] }
-yew-router = "0.17.0"
-jsfuckrs = { git = "https://github.com/cavemanjay/esoteric-playground.git", branch = "master" }
+leptos = "0.2.1"
+leptos_router = { version = "0.2.1", features = ["csr"] }
+console_error_panic_hook = "0.1.7"
+console_log = "0.2"
+log = "0.4"
+futures = "0.3.26"
+serde = { version = "1.0.152", features = ["derive"] }
 js-sys = "0.3.61"
+paste = "1.0.11"
+jsfuckrs = { git = "https://github.com/cavemanjay/esoteric-playground.git", branch = "master" }
