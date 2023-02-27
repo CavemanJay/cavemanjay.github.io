@@ -1,8 +1,8 @@
 #![warn(clippy::pedantic, clippy::nursery)]
 // mod components;
 // mod pages;
-use leptos::*;
-use website::*;
+use leptos::{mount_to_body, view, warn};
+use website::{App, AppProps};
 // use crate::{components::*, pages::*};
 // use yew::prelude::*;
 // use yew_router::prelude::*;

@@ -3,7 +3,7 @@
 // use yew::prelude::*;
 
 use leptos::*;
-use leptos_router::*;
+
 
 #[component]
 pub fn NotFound(cx: Scope) -> impl IntoView {

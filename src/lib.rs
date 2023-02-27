@@ -61,7 +61,7 @@ pub enum Page {
 }
 
 impl Page {
-    pub const fn path(self) -> &'static str {
+    #[must_use] pub const fn path(self) -> &'static str {
         match self {
             Self::Root => "/",
             Self::Home => "/home",
