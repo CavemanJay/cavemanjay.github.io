@@ -29,6 +29,7 @@ pub fn Home() -> Html {
                         {"languages"}
                         <ol class="[&>li>span]:secondary">
                             <li><span>{"Rust"}</span></li>
+                            <li><span>{"TypeScript"}</span></li>
                             <li><span>{"Python"}</span></li>
                             <li><span>{"C#"}</span></li>
                             <li><span>{"Go"}</span></li>
