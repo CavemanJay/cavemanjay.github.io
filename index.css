@@ -75,10 +75,8 @@ button.link {
 a.link {
   @apply secondary underline;
 }
-.w {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+.home {
+  @apply max-w-2xl mx-auto py-16 px-8;
 }
 hr {
   text-align: center;
