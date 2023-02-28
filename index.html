@@ -1,13 +1,36 @@
 <!DOCTYPE html><html><head>
     <meta charset="utf-8">
     <title>/optsec</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="icon" href="./static/terminal.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/site-6773b85621696a4f.css">
-    <!-- <link data-trunk href="./style/yoink.css" rel="css" /> -->
+    <link rel="icon" href="/static/terminal.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/cavemanjay.github.io/site-83aac43d85e52337.css">
+    
+    <base href="/cavemanjay.github.io/">
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
+    <script type="module">import init from '/cavemanjay.github.io/website-67057471aa363f7c.js';init('/cavemanjay.github.io/website-67057471aa363f7c_bg.wasm');</script>
+    <script src="https://ajaxorg.github.io/ace-builds/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://ajaxorg.github.io/ace-builds/src-min-noconflict/mode-xml.js"></script>
     <!-- Source is on GitHub :) https://github.com/CavemanJay/cavemanjay.github.io -->
   
-<link rel="preload" href="/website-396c6192755561e9_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
-<link rel="modulepreload" href="/website-396c6192755561e9.js"></head>
+<link rel="preload" href="/cavemanjay.github.io/website-67057471aa363f7c_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/cavemanjay.github.io/website-67057471aa363f7c.js"></head>
 <body>
-<script type="module">import init from '/website-396c6192755561e9.js';init('/website-396c6192755561e9_bg.wasm');</script></body></html>
+</body></html>
