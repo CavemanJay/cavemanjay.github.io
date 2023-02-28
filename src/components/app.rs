@@ -6,7 +6,7 @@ use leptos_router::*;
 pub fn App(cx: Scope) -> impl IntoView {
 
     view! { cx,
-        <div class="h-[97vh] overflow-auto container mx-auto">
+        <div class="h-[96vh] overflow-auto container mx-auto">
             <Router>
                 // <nav>
                 //     <A exact=true href=Page::Home.path()>"Home"</A>

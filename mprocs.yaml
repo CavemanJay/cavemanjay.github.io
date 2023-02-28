@@ -1,5 +1,5 @@
 procs:
-  trunk: "trunk serve -i node_modules"
+  trunk: "trunk serve -i node_modules -i dist -i target -w src -w static -w index.html"
   # bacon clippy: "bacon -j clippy"
   # bacon tests: "bacon -j test"
   tailwind: "pnpm run tailwind-watch"
