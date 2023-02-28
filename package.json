@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "tailwind-watch": "tailwindcss -i ./index.css -o ./static/site.css --watch",
-    "tailwind-build": "tailwindcss -i ./index.css -o ./static/site.css"
+    "tailwind-build": "tailwindcss -i ./index.css -o ./static/site.css --minify"
   },
   "repository": {
     "type": "git",
