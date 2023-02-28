@@ -7,10 +7,6 @@ pub fn Home(cx: Scope) -> impl IntoView {
     view! { cx,
         <>
             <div class="max-w-2xl mx-auto sm:py-16 sm:px-8 py-4 px-2">
-                <header>
-                    <h1 class="text-[2em] font-[monospace] font-bold">"/optsec"</h1>
-                    <p></p>
-                </header>
                 <ul>
                     <li>
                         "# whoami"
