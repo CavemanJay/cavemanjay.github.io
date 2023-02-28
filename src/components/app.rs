@@ -13,7 +13,7 @@ pub fn App(cx: Scope) -> impl IntoView {
                 //     <A exact=true href=Page::About.path()>"About"</A>
                 //     <A href=Page::Projects.path()>"Projects"</A>
                 // </nav>
-                <main class="">
+                <div id="main">
                     <Routes>
                         <Route
                             path=Page::Root.path()
@@ -46,7 +46,7 @@ pub fn App(cx: Scope) -> impl IntoView {
                             view=move |cx| view! { cx,  <NotFound/> }
                         />
                     </Routes>
-                </main>
+                </div>
                 <footer class="flex h-[3vh] bg-[var(--background)]">
                     <div class="flex-1 text-left pl-3">
                     </div>

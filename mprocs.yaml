@@ -3,4 +3,4 @@ procs:
   # bacon clippy: "bacon -j clippy"
   # bacon tests: "bacon -j test"
   tailwind: "pnpm run tailwind-watch"
-  docs: "cargo watch -x doc"
+  # docs: "cargo watch -x doc"
