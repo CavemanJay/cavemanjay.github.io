@@ -72,9 +72,6 @@ button.link {
 a.link {
   @apply secondary underline;
 }
-.home {
-  @apply max-w-2xl mx-auto py-16 px-8;
-}
 table {
   width: 100%;
 }
