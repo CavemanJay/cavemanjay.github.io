@@ -1,5 +1,9 @@
 #![warn(clippy::pedantic, clippy::nursery)]
-#![allow(clippy::wildcard_imports, clippy::module_name_repetitions)]
+#![allow(
+    clippy::wildcard_imports,
+    clippy::module_name_repetitions,
+    clippy::too_many_lines
+)]
 
 mod components;
 mod pages;
@@ -61,7 +65,8 @@ pub enum Page {
 }
 
 impl Page {
-    #[must_use] pub const fn path(self) -> &'static str {
+    #[must_use]
+    pub const fn path(self) -> &'static str {
         match self {
             Self::Root => "/",
             Self::Home => "/home",
