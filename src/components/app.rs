@@ -29,6 +29,10 @@ pub fn App(cx: Scope) -> impl IntoView {
                                 view=move |cx| view! { cx,  <UnderConstruction /> }
                             />
                             <Route
+                                path=Page::Projects.path()
+                                view=move |cx| view! { cx,  <UnderConstruction /> }
+                            />
+                            <Route
                                 path=Page::JSF___.path()
                                 view=move |cx| view! { cx,  <JsfVisualizer /> }
                             />
