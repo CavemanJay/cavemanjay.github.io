@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'cimg/rust:1.67.1-node'
+        }
+    }
     stages {
         stage('Setup') {
             steps {
