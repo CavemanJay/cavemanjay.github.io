@@ -1,16 +1,16 @@
 pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        sh 'cargo build'
-      }
+    agent any
+    stages {
+        stage('Setup') {
+            steps {
+                sh 'cargo install trunk'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'trunk build --release'
+                archiveArtifacts artifacts: '/dist/**/*.*', fingerprint: true
+            }
+        }
     }
-
-    stage('Test') {
-      steps {
-        sh 'cargo test'
-      }
-    }
-  }
 }
