@@ -95,14 +95,6 @@ pub fn JsfVisualizer(cx: Scope) -> impl IntoView {
                     "Compile"
                 </button>
             </div>
-            // <input
-            //     class="m-4 [writing-mode:horizontal-tb]"
-            //     value=src
-            //     on:change = move |ev| {
-            //         let val = event_target_value(&ev);
-            //         set_src.update(|v|*v = val);
-            //     }
-            // />
             <div class="h-80 overflow-auto border border-[var(--secondary)] rounded m-2">
                 <code class="p-3">{compiled}</code>
             </div>
@@ -112,59 +104,12 @@ pub fn JsfVisualizer(cx: Scope) -> impl IntoView {
             >
                 "Run This"
             </button>
-            <style>
-            r#"
-            @keyframes open {
-                0% {
-                  opacity: 0
-                }
-                100% {
-                  opacity: 1
-                }
-              }
-              
-              /* closing animation */
-              @keyframes close {
-                0% {
-                  opacity: 1
-                }
-                100% {
-                  opacity: 0
-                }
-              }
-              
-              details[open] summary~* {
-                animation: open .5s;
-              }
-              
-              /* closing class */
-              details.closing summary~* {
-                animation: close .5s;
-              } 
-            "#
-            </style>
             <script defer>
                 r#"
-                const details = document.querySelector("details");
-                details.addEventListener("click", function(e) {
-                if (details.hasAttribute("open")) { // since it's not closed yet, it's open!
-                    e.preventDefault(); // stop the default behavior, meaning - the hiding
-                    details.classList.add("closing"); // add a class which apply the animation in CSS
-                    setTimeout(() => { // only after the animation finishes, continue
-                    details.removeAttribute("open"); // close the element
-                    details.classList.remove("closing");
-                    }, 400);
-                }
-                });
+                    var editor = ace.edit("editor");
+                    editor.setTheme("ace/theme/monokai");
+                    editor.session.setMode("ace/mode/javascript");
                 "#
-            </script>
-            <script defer>
-r#"
-                var editor = ace.edit("editor");
-                editor.setTheme("ace/theme/monokai");
-                editor.session.setMode("ace/mode/javascript");
-
-"#
             </script>
         </div>
     }
